@@ -1,23 +1,20 @@
 <?php
 class Menu {
-  // $nameというプロパティを定義してください
   public $name;
   
+  public function hello() {
+    // '私は○○です'とechoしてください
+    echo '私は'.$this -> name.'です';
+    
+  }
 }
 
 $curry = new Menu();
 $pasta = new Menu();
-// $curryのnameプロパティに'CURRY'を代入してください
 $curry -> name = 'CURRY';
-
-// $pastaのnameプロパティに'PASTA'を代入してください
 $pasta -> name = 'PASTA';
-
-// $curryのnameプロパティをechoしてください
-echo $curry -> name;
-
+$curry -> hello();
 echo '<br>';
-// $pastaのnameプロパティをechoしてください
-echo $pasta -> name;
+$pasta -> hello();
 
 ?>
