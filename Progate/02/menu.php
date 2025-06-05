@@ -1,18 +1,38 @@
 <?php
 class Menu {
-  public $name;
-  // $priceというプロパティを定義してください
-  public $price;
-  // $imageというプロパティを定義してください
-  public $image;
+  private $name;
+  private $price;
+  private $image;
+  // $orderCountというプロパティを定義してください。ただし、初期値を数値の0としてください。
+  private $orderCount = 0;
   
-  // コンストラクタの引数に$price, $imageを追加してください
   public function __construct($name, $price, $image) {
     $this->name = $name;
-    // priceプロパティに引数の$priceを代入してください
     $this->price = $price;
-    // imageプロパティに引数の$imageを代入してください
     $this->image = $image;
   }
+  
+  public function getName() {
+    return $this->name;
+  }
+  
+  public function getImage() {
+    return $this->image;
+  }
+  
+  // getOrderCountメソッドを定義してください
+  public function getOrderCount() {
+    return $this->orderCount;
+  }
+  
+  // setOrderCountメソッドを定義してください
+  public function setOrderCount($orderCount) {
+    $this->orderCount = $orderCount;
+  }
+  
+  public function getTaxIncludedPrice() {
+    return floor($this->price * 1.08);
+  }
+  
 }
 ?>
