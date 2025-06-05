@@ -3,7 +3,6 @@ class Menu {
   private $name;
   private $price;
   private $image;
-  // $orderCountというプロパティを定義してください。ただし、初期値を数値の0としてください。
   private $orderCount = 0;
   
   public function __construct($name, $price, $image) {
@@ -20,18 +19,21 @@ class Menu {
     return $this->image;
   }
   
-  // getOrderCountメソッドを定義してください
   public function getOrderCount() {
     return $this->orderCount;
   }
   
-  // setOrderCountメソッドを定義してください
   public function setOrderCount($orderCount) {
     $this->orderCount = $orderCount;
   }
   
   public function getTaxIncludedPrice() {
     return floor($this->price * 1.08);
+  }
+  
+  // getTotalPriceメソッドを定義してください
+  public function getTotalPrice() {
+    return $this->getTaxIncludedPrice() * $this->orderCount;
   }
   
 }
