@@ -1,17 +1,18 @@
 <?php
 class Menu {
-  private $name;
-  private $price;
-  private $image;
+  // name, price, imageプロパティのアクセス権をprotectedに変更してください
+  protected $name;
+  protected $price;
+  protected $image;
   private $orderCount = 0;
-  private static $count = 0;
+  // countクラスプロパティのアクセス権をprotectedに変更してください
+  protected static $count = 0;
   
   public function __construct($name, $price, $image) {
     $this->name = $name;
     $this->price = $price;
     $this->image = $image;
     self::$count++;
-    
   }
   
   public function hello() {
