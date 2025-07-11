@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Form Example</title>
-</head>
-<body>
-  <form action="">
-    ID : <input type="text" name="id"><br>
-    PW : <input type="password" name="pw"><br>
-    <input type="submit" value="전송">
-  </form>
-</body>
-</html>
+<?php
+// フォームからPOSTで送られた値を取得
+$id = $_POST['id'] ?? '';
+$pw = $_POST['pw'] ?? '';
+
+// 簡単にサニタイズ（XSS対策）
+$id = htmlspecialchars($id, ENT_QUOTES, 'UTF-8');
+$pw = htmlspecialchars($pw, ENT_QUOTES, 'UTF-8');
+
+echo "<h2>送信されたデータ</h2>";
+echo "ID: " . $id . "<br>";
+echo "PW: " . $pw . "<br>";
+?>
